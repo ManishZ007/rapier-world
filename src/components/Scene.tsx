@@ -29,6 +29,7 @@ export default Scene;
 // and  KeyboardControls that is in SimpleStart.tsx
 
 // 6th step goto the
+// components -> PhysicsComponents -> InstanceMesh.tsx
 
 // main docs for guid
 // https://rapier.rs/docs/api/javascript/JavaScript3D
