@@ -1,12 +1,13 @@
-import PhysicsScene from "./PhysicsScene";
+import RigidBodyMethods from "./physicsComponent/RigidBodyMethods";
 
 const SimpleStart = () => {
   return (
     <>
       <ambientLight />
       <directionalLight position={[2, 2, 3]} castShadow />
-
-      <PhysicsScene />
+      {/* <PhysicsScene /> */}
+      {/* <ColliderPhysics /> */}
+      <RigidBodyMethods />
     </>
   );
 };
