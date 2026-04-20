@@ -1,73 +1,87 @@
-# React + TypeScript + Vite
+# 🌍 rapier-world
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Exploring physics-based simulations using **@react-three/rapier** in React Three Fiber 🚀⚛️
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📖 About
 
-## React Compiler
+**rapier-world** is a hands-on learning repository focused on understanding **3D physics simulation** in modern web applications using **Rapier Physics Engine** with React Three Fiber.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project covers everything from basic physics concepts to advanced real-time simulations like rigid body control, collision systems, player movement, and performance optimization using instancing.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🧠 What You'll Learn
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Basics of physics simulation in 3D 🌐  
+- Colliders and rigid bodies ⚙️  
+- Applying forces, impulses, and torque 💥  
+- Understanding mass, friction, and restitution ⚖️  
+- Keyboard-based player movement 🎮  
+- Building a simple physics-based game 🕹️  
+- Performance optimization using instanced meshes 🚀  
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🧭 Learning Flow (Step-by-Step)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Follow this order to understand concepts clearly:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. `SimpleStart.tsx` → Entry point  
+2. `ColliderPhysics.tsx` → Colliders & shapes  
+3. `RigidBodyMethods.tsx` → Forces & physics control  
+4. `MassStudy.tsx` → Mass & movement behavior  
+5. `SimpleGame.tsx` → Player movement + game logic  
+6. `InstanceMesh.tsx` → Performance optimization (instancing)  
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+📌 Official Docs: https://rapier.rs/docs/api/javascript/JavaScript3D
+
+---
+
+## 📂 Project Structure
+
+
+src/
+│
+├── App.tsx // Canvas setup (camera, shadows)
+├── main.tsx // Entry point
+│
+├── components/
+│ │
+│ ├── Scene.tsx // Scene wrapper (controls + main component)
+│ ├── SimpleStart.tsx // Main learning switch component
+│ │
+│ ├── physicsComponent/
+│ │ ├── ColliderPhysics.tsx // Collider types & interactions
+│ │ ├── RigidBodyMethods.tsx // Forces, impulses, torque
+│ │ ├── MassStudy.tsx // Mass vs movement
+│ │ ├── SimpleGame.tsx // Keyboard controls + game logic
+│ │ └── InstancedMesh.tsx // Instancing + performance
+│
+└── ...
+
+
+---
+
+## ⚙️ Core Setup
+
+### 🎬 Canvas Setup (`App.tsx`)
+
+- Enables shadows  
+- Custom camera configuration  
+- Loads main scene  
+
+```tsx
+<Canvas
+  shadows
+  camera={{
+    fov: 45,
+    near: 0.1,
+    far: 100,
+    position: [0, 7, 20],
+  }}
+>
+  <Scene />
+</Canvas>
 ```
